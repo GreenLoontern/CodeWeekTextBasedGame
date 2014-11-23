@@ -12,3 +12,5 @@ The possible starting commands can be included in the switch statement
 	Ask me (Gabe) how; I know how to do it.
 
 //Other stuff goes here\\
+
+TA1.append() - displays stuff to the text area. DO NOT USE System.out.println()!

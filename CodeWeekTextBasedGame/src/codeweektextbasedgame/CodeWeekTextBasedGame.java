@@ -18,6 +18,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
     public static final int HEIGHT = 440;
     public static final String TITLE = "Code Week Text Based Game";
     
+    //Class object declarations
+    Help help = new Help();
+    
 	public CodeWeekTextBasedGame() {
 		add(new Panel());
 		setSize(WIDTH, HEIGHT);
@@ -114,11 +117,26 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                     
                     //Possible commands go below
                     
-                    default:
+                    case "new": //Starts a new game
+                        
+                        //New game method called here
+                        
+                    break;    
+                    
+                    case "help": //displays commands to user
+                        
+                        TA1.append("//" + text + "//" + doubleline);
+                        
+                        TA1.append(help.evaluate());
+                        
+                    break;    
+                        
+                    default: //If we don't have a command, it goes here
                         
                         TA1.append("//" + text + "//" + doubleline);
                         
                         TA1.append("I don't know how to " + text + "." + newline);
+                    
                     break;
                     
                 }
