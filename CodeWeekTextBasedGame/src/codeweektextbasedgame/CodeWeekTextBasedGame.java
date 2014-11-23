@@ -50,7 +50,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 	public static JTextField TF1 = new JTextField();
 	public static JTextArea TA1 = new JTextArea(/*Opening words go here*/
                                                       "Welcome to " + TITLE + ", a text based game promoting Code Week!"
-                                                    + newline + "");
+                                                    + newline + "" /*Don't change past here in the opening message*/ + doubleline);
 
 	// End Variable Declaration
 
@@ -116,9 +116,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                     
                     default:
                         
-                        TA1.append("//" + text + "//\n\n");
+                        TA1.append("//" + text + "//" + doubleline);
                         
-                        TA1.append("I don't know how to " + text + ".\n");
+                        TA1.append("I don't know how to " + text + "." + newline);
                     break;
                     
                 }
