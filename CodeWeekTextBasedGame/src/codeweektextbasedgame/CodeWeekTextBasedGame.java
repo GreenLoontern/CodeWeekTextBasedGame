@@ -125,7 +125,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                     
                     case "help": //displays commands to user
                         
-                        TA1.append("//" + text + "//" + doubleline);
+                        TA1.append(doubleline + "//" + text + "//" + doubleline);
                         
                         TA1.append(help.evaluate());
                         
@@ -133,7 +133,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                         
                     default: //If we don't have a command, it goes here
                         
-                        TA1.append("//" + text + "//" + doubleline);
+                        TA1.append(doubleline + "//" + text + "//" + doubleline);
                         
                         TA1.append("I don't know how to " + text + "." + newline);
                     

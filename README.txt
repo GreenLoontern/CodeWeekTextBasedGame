@@ -11,6 +11,21 @@ The possible starting commands can be included in the switch statement
 	how cluttered the main class is. They can be called from the switch statement.
 	Ask me (Gabe) how; I know how to do it.
 
+
+GIT COMMANDS:
+
+to put stuff on the server
+	
+	git add -A (Enter key)
+
+	git commit -m "<What you did goes here>" (Enter key)
+
+	git push origin master (Enter key)
+
+to pull stuff from the server
+
+	git pull origin master (Enter key)
+
 //Other stuff goes here\\
 
 TA1.append() - displays stuff to the text area. DO NOT USE System.out.println()!
