@@ -111,6 +111,8 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent evt) {
 		text = TF1.getText();
 
+                NewGame ng = new NewGame();                
+                
                 //Beginning text game stuff goes here
                 
                 switch(text){
@@ -119,7 +121,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                     
                     case "new": //Starts a new game
                         
-                        //New game method called here
+                        ng.evaluate();
                         
                     break;    
                     
@@ -129,7 +131,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                         
                         TA1.append(help.evaluate());
                         
-                    break;    
+                    break;
                         
                     default: //If we don't have a command, it goes here
                         
