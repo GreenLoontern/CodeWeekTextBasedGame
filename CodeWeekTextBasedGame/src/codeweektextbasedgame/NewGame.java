@@ -10,7 +10,7 @@ public class NewGame {
         switch(text){
            
             default:
-                System.out.println("a");
+                TA1.append("You Have Started a New Game.");
                 
             break;
             

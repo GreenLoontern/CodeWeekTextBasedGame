@@ -16,7 +16,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 
     public static final int WIDTH = 600;
     public static final int HEIGHT = 440;
-    public static final String TITLE = "Code Week Text Based Game";
+    public static final String TITLE = "Text Based Coding Game";
     
     //Class object declarations
     Help help = new Help();
@@ -53,7 +53,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 	public static JTextField TF1 = new JTextField();
 	public static JTextArea TA1 = new JTextArea(/*Opening words go here*/
                                                       "Welcome to " + TITLE + ", a text based game promoting Code Week!"
-                                                    + newline + "" /*Don't change past here in the opening message*/ + doubleline);
+                                                    + newline + "" /*Don't change past here in the opening message*/ + newline+" If you need help, type in the command \" help \" ");
 
 	// End Variable Declaration
 
