@@ -111,15 +111,17 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent evt) {
 		text = TF1.getText();               
                 
+                NewGame newgame = new NewGame();
+                
                 //Beginning text game stuff goes here
                 
                 switch(text){
-                    
+
                     //Possible commands go below
                     
                     case "new": //Starts a new game
                         
-                        new NewGame();
+                        newgame.evaluate();
                         
                     break;    
                     

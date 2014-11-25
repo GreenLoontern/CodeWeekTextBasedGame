@@ -5,7 +5,7 @@ import static codeweektextbasedgame.CodeWeekTextBasedGame.text;
 
 public class NewGame {
     
-    public NewGame(){
+    public void evaluate(){
         
         switch(text){
            
