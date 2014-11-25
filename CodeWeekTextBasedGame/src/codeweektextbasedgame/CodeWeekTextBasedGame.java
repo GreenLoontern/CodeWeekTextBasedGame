@@ -109,9 +109,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent evt) {
-		text = TF1.getText();
-
-                NewGame ng = new NewGame();                
+		text = TF1.getText();               
                 
                 //Beginning text game stuff goes here
                 
@@ -121,7 +119,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                     
                     case "new": //Starts a new game
                         
-                        ng.evaluate();
+                        new NewGame();
                         
                     break;    
                     

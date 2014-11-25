@@ -1,12 +1,13 @@
 package codeweektextbasedgame;
 
+import static codeweektextbasedgame.CodeWeekTextBasedGame.TA1;
+import static codeweektextbasedgame.CodeWeekTextBasedGame.text;
+
 public class NewGame {
     
-    CodeWeekTextBasedGame main = new CodeWeekTextBasedGame();
-    
-    public void evaluate(){
+    public NewGame(){
         
-        switch(main.text){
+        switch(text){
            
             default:
                 System.out.println("a");
