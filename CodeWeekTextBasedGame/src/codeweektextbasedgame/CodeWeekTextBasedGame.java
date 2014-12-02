@@ -54,6 +54,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 	public static JTextArea TA1 = new JTextArea(/*Opening words go here*/
                                                       "Welcome to " + TITLE + ", a text based game promoting Code Week!"
                                                     + newline + "" /*Don't change past here in the opening message*/ + newline+" If you need help, type in the command \" help \" ");
+        public static boolean playing = false;
+        public static int posX = 0;
+        public static int posY = 0;
 
 	// End Variable Declaration
 

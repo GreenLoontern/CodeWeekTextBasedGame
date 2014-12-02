@@ -6,16 +6,15 @@ import static codeweektextbasedgame.CodeWeekTextBasedGame.text;
 public class NewGame {
     
     public void evaluate(){
-        
-        switch(text){
-           
-            default:
-                TA1.append("You Have Started a New Game.");
-                
-            break;
-            
-        }
-        
+            if(CodeWeekTextBasedGame.playing != true){
+                TA1.append("\nYou Have Started a New Game.");
+                CodeWeekTextBasedGame.playing = true;
+                Spawn.evaluate();
+            }else{
+                TA1.append("\nA Game is Already Running.");
+            }
+                 
+
     }
     
 }
