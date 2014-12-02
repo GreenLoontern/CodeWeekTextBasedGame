@@ -7,7 +7,7 @@ public class NewGame {
     
     public void evaluate(){
             if(CodeWeekTextBasedGame.playing != true){
-                TA1.append("\nYou Have Started a New Game.");
+                TA1.append("\n\n\nYou Have Started a New Game.");
                 CodeWeekTextBasedGame.playing = true;
                 Spawn.evaluate();
             }else{

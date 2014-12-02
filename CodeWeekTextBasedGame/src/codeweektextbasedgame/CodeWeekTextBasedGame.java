@@ -135,7 +135,67 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                         TA1.append(help.evaluate());
                         
                     break;
-                        
+                  
+            
+                    case "up":
+                        TA1.append(doubleline + "//" + text + "//" + doubleline);
+                        if(playing){
+                            
+                            if(posY<=9){
+                                CodeWeekTextBasedGame.posY+=1;
+                                TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                            }else
+                            TA1.append("\nYou cannot move farther up.");
+                        }else
+                        TA1.append("\nYou are not currently playing a game.\n In order to start a game type in \"new\".");
+                
+                    break;
+            
+                    case "down":
+                        TA1.append(doubleline + "//" + text + "//" + doubleline);
+                        if(playing){
+                            
+                            if(posY>=1){
+                                CodeWeekTextBasedGame.posY-=1;
+                                TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                            }else
+                            TA1.append("\nYou cannot move farther down.");
+                            
+                        }else
+                        TA1.append("\nYou are not currently playing a game.\n In order to start a game type in \"new\".");
+                
+                    break;
+            
+                    case "left":
+                        TA1.append(doubleline + "//" + text + "//" + doubleline);
+                        if(playing){
+                            
+                            if(posX>=1){
+                                CodeWeekTextBasedGame.posX-=1;
+                                TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                            }else
+                            TA1.append("\nYou cannot move farther left.");
+                        }else
+                        TA1.append("\nYou are not currently playing a game.\n In order to start a game type in \"new\".");
+                
+                    break;
+                
+                    case "right":
+                        TA1.append(doubleline + "//" + text + "//" + doubleline);
+                        if(playing){
+                            
+                            if(posX<=9){
+                                CodeWeekTextBasedGame.posX+=1;
+                                TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                            }else
+                            TA1.append("\nYou cannot move farther right.");
+                        }else
+                        TA1.append("\nYou are not currently playing a game.\n In order to start a game type in \"new\".");
+                
+                    break;
+                
+                
+                   
                     default: //If we don't have a command, it goes here
                         
                         TA1.append(doubleline + "//" + text + "//" + doubleline);
