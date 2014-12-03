@@ -2,7 +2,7 @@ package codeweektextbasedgame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -45,8 +45,13 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 
 	public final static String newline = "\n"; // For conveinence purposes
 	public final static String doubleline = "\n" + "\n"; // For conveinence
+        public final static int totalHealth = 10;
 															// purposes
-	public static String text = "";
+	public static Random universalRandom = new Random();
+        public static String text = "";
+        public static int health = totalHealth;
+        public static int armor = 10;
+        public static int dieRoll = 0;
 	public static String location = "menu";
 	public static String lastLocation = "";
 	public static JScrollPane SP1 = new JScrollPane();
@@ -144,6 +149,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                             if(posY<=9){
                                 CodeWeekTextBasedGame.posY+=1;
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                                TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
+                                
+                                mTurn.spawn();
                             }else
                             TA1.append("\nYou cannot move farther up.");
                         }else
@@ -158,6 +166,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                             if(posY>=1){
                                 CodeWeekTextBasedGame.posY-=1;
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                                TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
+                                
+                                mTurn.spawn();
                             }else
                             TA1.append("\nYou cannot move farther down.");
                             
@@ -173,10 +184,15 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                             if(posX>=1){
                                 CodeWeekTextBasedGame.posX-=1;
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                                TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
+                                
+                                 mTurn.spawn();
                             }else
                             TA1.append("\nYou cannot move farther left.");
                         }else
                         TA1.append("\nYou are not currently playing a game.\n In order to start a game type in \"new\".");
+                        
+                       
                 
                     break;
                 
@@ -187,10 +203,15 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                             if(posX<=9){
                                 CodeWeekTextBasedGame.posX+=1;
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
+                                TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
+                                
+                                mTurn.spawn();
                             }else
                             TA1.append("\nYou cannot move farther right.");
                         }else
                         TA1.append("\nYou are not currently playing a game.\n In order to start a game type in \"new\".");
+                        
+                        
                 
                     break;
                 
