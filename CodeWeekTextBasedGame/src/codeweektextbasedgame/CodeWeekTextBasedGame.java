@@ -17,6 +17,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
     public static final int WIDTH = 600;
     public static final int HEIGHT = 440;
     public static final String TITLE = "Text Based Coding Game";
+    mTurn monster = new mTurn();
     
     //Class object declarations
     Help help = new Help();
@@ -45,13 +46,13 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 
 	public final static String newline = "\n"; // For conveinence purposes
 	public final static String doubleline = "\n" + "\n"; // For conveinence
-        public final static int totalHealth = 10;
+        public final static int totalHealth = 20;
 															// purposes
 	public static Random universalRandom = new Random();
         public static String text = "";
         public static int health = totalHealth;
-        public static int armor = 10;
-        public static int dieRoll = 0;
+        public static int armor = 5;
+        public static int attack = 5;
 	public static String location = "menu";
 	public static String lastLocation = "";
 	public static JScrollPane SP1 = new JScrollPane();
@@ -151,7 +152,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                mTurn.spawn();
+                                if(universalRandom.nextInt(3) == 0){
+                                monster.spawn();
+                                }
                             }else
                             TA1.append("\nYou cannot move farther up.");
                         }else
@@ -168,7 +171,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                mTurn.spawn();
+                                if(universalRandom.nextInt(3) == 0){
+                                monster.spawn();
+                                }
                             }else
                             TA1.append("\nYou cannot move farther down.");
                             
@@ -186,7 +191,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                 mTurn.spawn();
+                                if(universalRandom.nextInt(3) == 0){
+                                 monster.spawn();
+                                }
                             }else
                             TA1.append("\nYou cannot move farther left.");
                         }else
@@ -205,7 +212,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                mTurn.spawn();
+                                if(universalRandom.nextInt(3) == 0){
+                                monster.spawn();
+                                }
                             }else
                             TA1.append("\nYou cannot move farther right.");
                         }else
@@ -236,6 +245,9 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 		TA1.setCaretPosition(TA1.getDocument().getLength());
 
 	}
+        public void playerattack(){
+            
+        }
 
 }
 
