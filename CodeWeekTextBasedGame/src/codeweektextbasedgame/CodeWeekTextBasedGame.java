@@ -49,6 +49,8 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
         public final static int totalHealth = 20;
 															// purposes
 	public static Random universalRandom = new Random();
+        public static int bonusAttack = 0;
+        public static int heals = 0;
         public static String text = "";
         public static int health = totalHealth;
         public static int armor = 5;
@@ -245,8 +247,33 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 		TA1.setCaretPosition(TA1.getDocument().getLength());
 
 	}
-        public void playerattack(){
-            
+        public static void playerAttack(){
+       
+           mTurn.health -= attack;
+           TA1.append("\nYou deal "+attack+" hitpoints to the "+mTurn.finalName+".");
+           if(mTurn.health <= 0){
+               TA1.append("\nThe "+mTurn.finalName+" dies.");
+               if(universalRandom.nextInt(2) == 0){
+                   bonusAttack = universalRandom.nextInt(5)+1;
+                   TA1.append("\nYou recieve "+bonusAttack+" bonus attack from the experience of the fight.");
+                   attack+= bonusAttack;
+               }
+               if(universalRandom.nextInt(2) == 0){
+                   heals = universalRandom.nextInt(5)+1;
+                   TA1.append("\nYou recieve "+heals+" health from the scavengeable corpse.");
+                   if(health+heals <= totalHealth){
+                   health+= heals;
+                   }else{
+                   health = totalHealth;    
+                   }
+                TA1.append("\nYou have "+CodeWeekTextBasedGame.health+" hitpoints out of "+CodeWeekTextBasedGame.totalHealth+" hitpoints.");
+               }
+           }else{
+            mTurn.attack();
+           }
+           
+      
+
         }
 
 }

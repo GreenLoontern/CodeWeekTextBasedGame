@@ -7,14 +7,16 @@ import static codeweektextbasedgame.CodeWeekTextBasedGame.totalHealth;
 
 public class mTurn {
     
-   public static int basehealth = 1;
+   public static int baseHealth = 1;
    public static int baseAttack = 1;
    public static int plusHealth = 0;
    public static int plusAttack = 0;
+   public static int health = baseHealth+plusHealth;
    public static int cmPosX = 0;
    public static int cmPosY = 0;
    public static String[] preName = new String[9];
    public static String[] name = new String[9];
+   public static String finalName = new String();
 
    
     public mTurn() {
@@ -42,13 +44,16 @@ public class mTurn {
         
         cmPosX = CodeWeekTextBasedGame.universalRandom.nextInt(10);
         cmPosY = 10;
+        
+        
     }
     
    public static void spawn(){
        if(CodeWeekTextBasedGame.posY!=cmPosY && CodeWeekTextBasedGame.posX!=cmPosX){
            plusAttack = CodeWeekTextBasedGame.universalRandom.nextInt(9);
            plusHealth = CodeWeekTextBasedGame.universalRandom.nextInt(9);
-           TA1.append("\nYou run into a "+preName[plusAttack]+" "+name[plusHealth]+".");
+           finalName = preName[plusAttack]+" "+name[plusHealth];
+           TA1.append("\nYou run into a "+finalName+".");
            attack();
        }
    }
@@ -61,6 +66,13 @@ public class mTurn {
        }else{
        TA1.append("\nThe "+preName[plusAttack]+" "+name[plusHealth]+" misses.");
        }
+       if(CodeWeekTextBasedGame.health == 0){
+           TA1.append("You were killed by the "+preName[plusAttack]+" "+name[plusHealth]+".");
+           TA1.append("Try Again? Type in new!");
+       }else{
+        CodeWeekTextBasedGame.playerAttack();   
+       }
+           
    }
 
 
