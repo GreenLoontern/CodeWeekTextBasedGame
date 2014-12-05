@@ -12,11 +12,12 @@ public class mTurn {
    public static int plusHealth = 0;
    public static int plusAttack = 0;
    public static int health = baseHealth+plusHealth;
-   public static int cmPosX = 0;
-   public static int cmPosY = 0;
+   public static int cmPosX = CodeWeekTextBasedGame.universalRandom.nextInt(11);
+   public static int cmPosY = 10;
    public static String[] preName = new String[9];
    public static String[] name = new String[9];
    public static String finalName = new String();
+   
 
    
     public mTurn() {
@@ -42,14 +43,19 @@ public class mTurn {
         preName[7] = "Demonic";
         preName[8] = "Fatal";
         
-        cmPosX = CodeWeekTextBasedGame.universalRandom.nextInt(10);
-        cmPosY = 10;
+
         
         
     }
     
    public static void spawn(){
-       if(CodeWeekTextBasedGame.posY!=cmPosY && CodeWeekTextBasedGame.posX!=cmPosX){
+       if(CodeWeekTextBasedGame.posY==cmPosY && CodeWeekTextBasedGame.posX==cmPosX){
+           TA1.append("\nYou Found the Corrupted Mother Board!"); 
+           plusAttack = 9;
+           plusHealth = 29;
+           finalName = "Corrupted Mother Board";
+           attack();
+       }else{
            plusAttack = CodeWeekTextBasedGame.universalRandom.nextInt(9);
            plusHealth = CodeWeekTextBasedGame.universalRandom.nextInt(9);
            finalName = preName[plusAttack]+" "+name[plusHealth];
@@ -66,9 +72,10 @@ public class mTurn {
        }else{
        TA1.append("\nThe "+preName[plusAttack]+" "+name[plusHealth]+" misses.");
        }
-       if(CodeWeekTextBasedGame.health == 0){
-           TA1.append("You were killed by the "+preName[plusAttack]+" "+name[plusHealth]+".");
-           TA1.append("Try Again? Type in new!");
+       if(CodeWeekTextBasedGame.health <= 0){
+           TA1.append("\nYou were killed by the "+preName[plusAttack]+" "+name[plusHealth]+".");
+           TA1.append("\nTry Again? Type in new!");
+           CodeWeekTextBasedGame.playing = false;
        }else{
         CodeWeekTextBasedGame.playerAttack();   
        }

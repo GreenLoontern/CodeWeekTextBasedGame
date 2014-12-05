@@ -47,12 +47,15 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 	public final static String newline = "\n"; // For conveinence purposes
 	public final static String doubleline = "\n" + "\n"; // For conveinence
         public final static int totalHealth = 20;
+        public final static int maxArmor = 9;
+        public final static int maxAttack = 10;
 															// purposes
 	public static Random universalRandom = new Random();
         public static int bonusAttack = 0;
         public static int heals = 0;
         public static String text = "";
         public static int health = totalHealth;
+        public static int bonusArmor = 0;
         public static int armor = 5;
         public static int attack = 5;
 	public static String location = "menu";
@@ -253,10 +256,19 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
            TA1.append("\nYou deal "+attack+" hitpoints to the "+mTurn.finalName+".");
            if(mTurn.health <= 0){
                TA1.append("\nThe "+mTurn.finalName+" dies.");
+               if(mTurn.finalName == "Corupted Mother Board"){
+                   TA1.append("\nYou defeated the Corrupted Mother Board, thus restoring yourself into your own realm.");
+                   TA1.append("\nPlay Again? Type in new!");
+                   playing = false;
+               }
                if(universalRandom.nextInt(2) == 0){
                    bonusAttack = universalRandom.nextInt(5)+1;
                    TA1.append("\nYou recieve "+bonusAttack+" bonus attack from the experience of the fight.");
+                   if(attack+bonusAttack <= maxAttack){
                    attack+= bonusAttack;
+                   }else{
+                   attack = maxAttack;    
+                   }
                }
                if(universalRandom.nextInt(2) == 0){
                    heals = universalRandom.nextInt(5)+1;
@@ -266,6 +278,15 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                    }else{
                    health = totalHealth;    
                    }
+                if(universalRandom.nextInt(2) == 0){
+                   bonusArmor = universalRandom.nextInt(5)+1;
+                   TA1.append("\nYou recieve "+bonusArmor+" armor from the hide of the beast.");
+                   if(armor+bonusArmor <= maxArmor){
+                   armor+= bonusArmor;
+                   }else{
+                   armor = maxArmor;    
+                   }
+                }
                 TA1.append("\nYou have "+CodeWeekTextBasedGame.health+" hitpoints out of "+CodeWeekTextBasedGame.totalHealth+" hitpoints.");
                }
            }else{
