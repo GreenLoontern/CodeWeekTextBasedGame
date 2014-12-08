@@ -60,6 +60,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
         public static int attack = 5;
 	public static String location = "menu";
 	public static String lastLocation = "";
+        public final static int winPlaceX = universalRandom.nextInt(11);
 	public static JScrollPane SP1 = new JScrollPane();
 	public static JTextField TF1 = new JTextField();
 	public static JTextArea TA1 = new JTextArea(/*Opening words go here*/
@@ -256,11 +257,12 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
            TA1.append("\nYou deal "+attack+" hitpoints to the "+mTurn.finalName+".");
            if(mTurn.health <= 0){
                TA1.append("\nThe "+mTurn.finalName+" dies.");
-               if(mTurn.finalName == "Corupted Mother Board"){
+               if(mTurn.finalName == "Corrupted Mother Board"){
                    TA1.append("\nYou defeated the Corrupted Mother Board, thus restoring yourself into your own realm.");
+                   TA1.append("\n"+doubleline+"Thank you for playing. This game was made in support of CodeWeek. \nCheck out Hour of Code online to learn more.");
                    TA1.append("\nPlay Again? Type in new!");
                    playing = false;
-               }
+               }else{
                if(universalRandom.nextInt(2) == 0){
                    bonusAttack = universalRandom.nextInt(5)+1;
                    TA1.append("\nYou recieve "+bonusAttack+" bonus attack from the experience of the fight.");
@@ -288,7 +290,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                    }
                 }
                 TA1.append("\nYou have "+CodeWeekTextBasedGame.health+" hitpoints out of "+CodeWeekTextBasedGame.totalHealth+" hitpoints.");
-               }
+               }}
            }else{
             mTurn.attack();
            }
@@ -299,3 +301,16 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 
 }
 
+/*
+Ha Reference to pi. Ha.
+
+
+
+
+Made By Gabe, Corey, and Zeke.
+
+
+
+
+Lol.
+*/
