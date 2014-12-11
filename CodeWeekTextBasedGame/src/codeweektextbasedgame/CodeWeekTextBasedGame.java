@@ -1,5 +1,7 @@
 package codeweektextbasedgame;
 
+import static codeweektextbasedgame.mTurn.cmPosX;
+import static codeweektextbasedgame.mTurn.cmPosY;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -158,7 +160,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                if(universalRandom.nextInt(3) == 0){
+                                if(universalRandom.nextInt(3) == 0||(CodeWeekTextBasedGame.posY==cmPosY && CodeWeekTextBasedGame.posX==cmPosX)){
                                 monster.spawn();
                                 }
                             }else
@@ -177,7 +179,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                if(universalRandom.nextInt(3) == 0){
+                                if(universalRandom.nextInt(3) == 0||(CodeWeekTextBasedGame.posY==cmPosY && CodeWeekTextBasedGame.posX==cmPosX)){
                                 monster.spawn();
                                 }
                             }else
@@ -197,7 +199,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                if(universalRandom.nextInt(3) == 0){
+                                if(universalRandom.nextInt(3) == 0||(CodeWeekTextBasedGame.posY==cmPosY && CodeWeekTextBasedGame.posX==cmPosX)){
                                  monster.spawn();
                                 }
                             }else
@@ -218,7 +220,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
                                 TA1.append("\nYou are now at "+CodeWeekTextBasedGame.posX+","+CodeWeekTextBasedGame.posY+".");
                                 TA1.append("\nYou have "+health+" hitpoints out of "+totalHealth+" hitpoints.");
                                 
-                                if(universalRandom.nextInt(3) == 0){
+                                if(universalRandom.nextInt(3) == 0||(CodeWeekTextBasedGame.posY==cmPosY && CodeWeekTextBasedGame.posX==cmPosX)){
                                 monster.spawn();
                                 }
                             }else

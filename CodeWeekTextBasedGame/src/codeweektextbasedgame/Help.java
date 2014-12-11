@@ -15,8 +15,10 @@ public class Help {
                 "down - moves down one unit" +newline+
                 "left - moves left one unit" +newline+
                 "right - moves right one unit"+newline+
-                "attack - attacks enemy one same square"+newline+
-                ""
+                "attack - attacks enemy one same square"+newline+newline+
+                "This game is a text based Dungeons and Dragons"+newline+
+                "The commands are above, and you must defeat the Corrupted Mother Board"+newline+
+                "Enjoy! Created by, Gabe S, Corey P, Erich V, and Zeke S."+newline+newline
                 
                 );
                

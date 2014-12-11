@@ -49,7 +49,6 @@ public class mTurn {
     }
     
    public static void spawn(){
-       TA1.append(""+mTurn.cmPosX);
        if(CodeWeekTextBasedGame.posY==cmPosY && CodeWeekTextBasedGame.posX==cmPosX){
            finalName = "Corrupted Mother Board";           
            TA1.append("\nYou Found the "+ finalName +"!"); 
