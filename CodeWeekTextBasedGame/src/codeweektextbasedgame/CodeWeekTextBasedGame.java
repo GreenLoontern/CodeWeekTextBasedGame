@@ -34,7 +34,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 		setTitle(TITLE); // Window Parameters
 
 		initComponents();
-
+                TF1.requestFocusInWindow();
 	}
 
 	public static void main(String[] args) {
@@ -87,6 +87,7 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 		TA1.setColumns(20);
 		TA1.setRows(10);
 		SP1.setViewportView(TA1);
+                
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
 				getContentPane());
@@ -127,6 +128,8 @@ public class CodeWeekTextBasedGame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent evt) {
 		text = TF1.getText();               
+                
+                
                 
                 NewGame newgame = new NewGame();
                 
